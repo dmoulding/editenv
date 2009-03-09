@@ -4,3 +4,5 @@ creating, and deleting variables.
 
 These functions modify the non-volatile environment variables that are stored
 in the system registry.
+
+See the editenv.h and EnvVar.hpp header files for API documentation.
