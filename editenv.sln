@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editenv", "editenv.vcproj", "{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "envtest", "envtest\envtest.vcproj", "{0A47F2D0-47F9-4D42-AAB6-692A8C75C010}"
+	ProjectSection(ProjectDependencies) = postProject
+		{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1} = {59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}.Debug|Win32.Build.0 = Debug|Win32
+		{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}.Release|Win32.ActiveCfg = Release|Win32
+		{59489F1B-1D27-43DB-9EB2-3BCB6F3D67F1}.Release|Win32.Build.0 = Release|Win32
+		{0A47F2D0-47F9-4D42-AAB6-692A8C75C010}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0A47F2D0-47F9-4D42-AAB6-692A8C75C010}.Debug|Win32.Build.0 = Debug|Win32
+		{0A47F2D0-47F9-4D42-AAB6-692A8C75C010}.Release|Win32.ActiveCfg = Release|Win32
+		{0A47F2D0-47F9-4D42-AAB6-692A8C75C010}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
