@@ -22,6 +22,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <limits>
+#define NOMINMAX
+#include <windows.h>
+#undef NOMINMAX
 
 #include "editenv.hpp"
 
@@ -98,6 +101,39 @@ void pathAdd (env_scope scope, char const *path)
     } else {
         var.paste(std::string(";") + path);
     }
+}
+
+void pathAddImmediate (env_scope scope, char const *path)
+{
+	size_t const sizeMax = std::numeric_limits<size_t>::max();
+
+	size_t      length = std::string(path).length();
+	size_t      pos;
+
+	char currPath[8096] = {0};
+	GetEnvironmentVariableA("PATH", currPath, 8096);
+
+	std::string value = currPath;
+	pos = value.find(path, 0);
+	while (sizeMax != pos) {
+		if (((0 == pos) ||
+			(';' == value[pos - 1])) &&
+			((pos + length == value.length()) ||
+			(';' == value[pos + length]))) {
+				// Found the path in the "Path" environment variable already.
+				return;
+		}
+		pos = value.find(path, pos + 1);
+	}
+
+	if (0 != value.length()) {
+		// Nothing is in the Path environment variable yet.
+		value.append(";");
+	}
+	value.append(path);
+
+	// add to local process
+	SetEnvironmentVariableA("PATH", value.c_str());
 }
 
 // Removes all matching instances of the specified path from the Path
