@@ -186,7 +186,7 @@ void EnvVar::paste (std::string const &text)
                   0,
                   REG_EXPAND_SZ,
                   reinterpret_cast<BYTE const *>(value_.c_str()),
-                  value_.length());
+                  value_.length() + 1);
     RegCloseKey(key);
 
     // Notify everyone of the change.
@@ -225,7 +225,7 @@ void EnvVar::set (std::string const &text)
                   0,
                   REG_EXPAND_SZ,
                   reinterpret_cast<const BYTE *>(value_.c_str()),
-                  value_.length());
+                  value_.length() + 1);
     RegCloseKey(key);
 
     // Notify everyone of the change.
