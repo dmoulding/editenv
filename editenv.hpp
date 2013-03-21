@@ -109,6 +109,10 @@ EDITENV_API char const * envValue (editenv::env_scope scope, char const *name);
 // Return Value: Nothing.
 EDITENV_API void pathAdd (editenv::env_scope, char const *path);
 
+// Almost the same as pathAdd, but only adds to the local path variable for
+// the calling process.
+EDITENV_API void pathAddImmediate (editenv::env_scope, char const *path);
+
 // Removes all matching instances of the specified path from the Path
 // environment variable.
 //
