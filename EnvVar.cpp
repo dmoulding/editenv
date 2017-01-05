@@ -23,9 +23,12 @@
 
 #include <cassert>
 #include <limits>
-#include <windows.h>
 
-#undef max // unbelievable
+#ifndef NOMINMAX // We do not need min and max macroses from <Windows.h>
+#define NOMINMAX
+#endif
+
+#include <windows.h>
 
 #include "EnvVar.hpp"
 
